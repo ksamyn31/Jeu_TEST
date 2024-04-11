@@ -26,5 +26,19 @@ class GameTest {
 			game.roll(1);
 		assertEquals(20,game.score());
 	}
+	
+	@Test
+	void test_vingt_deux() {
+		for(int i=0;i<20;i++)
+			game.roll(2);
+		assertEquals(40,game.score());
+	}
+	
+	@Test
+	void test_vingt_mois_un() {
+		for(int i=0;i<20;i++)
+			game.roll(-1);
+		assertEquals(0,game.score());
+	}
 
 }

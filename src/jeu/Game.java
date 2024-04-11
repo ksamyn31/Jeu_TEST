@@ -5,10 +5,12 @@ public class Game {
 	public int score = 0;
 	
 	void roll(int nbQuilles) {
-		score+=nbQuilles;
+		if(nbQuilles>=0)
+			score+=nbQuilles;
 	}
 	
 	int score() {
+		
 		return score;
 	}
 	
