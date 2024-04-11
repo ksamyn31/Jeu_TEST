@@ -35,10 +35,29 @@ class GameTest {
 	}
 	
 	@Test
-	void test_vingt_mois_un() {
+	void test_vingt_moins_un() {
 		for(int i=0;i<20;i++)
 			game.roll(-1);
 		assertEquals(0,game.score());
+	}
+	
+	@Test
+	void test_dix_un_et_dix_deux() {
+		for(int i=0;i<20;i++) {
+			if (i<10) game.roll(1);
+			else game.roll(2);
+		}	
+		assertEquals(30,game.score());
+	}
+	
+	@Test
+	void test_spare() {
+		game.roll(7);
+		game.roll(3);
+		game.roll(4);
+		for(int i=0;i<18;i++)
+			game.roll(0);
+		assertEquals(18,game.score());
 	}
 
 }
